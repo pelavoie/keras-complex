@@ -5,7 +5,7 @@ import unittest
 
 from keras.layers import Input
 from keras.models import Model
-# import tensorflow as tf
+import tensorflow as tf
 
 import numpy as np
 # import tensorflow as tf
@@ -104,5 +104,3 @@ class TestDNCMethods(unittest.TestCase):
         # tf_answer = np.array(sess.run())
 
 
-if __name__ == "__main__":
-    unittest.main(verbosity=1)
