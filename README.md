@@ -33,6 +33,28 @@ Installation
 pip install .
 ```
 
+Usage
+-----
+Build your neural networks with the help of keras. 
+
+```python
+import complexnn
+
+import keras
+from keras import models
+from keras import layers
+from keras import optimizers
+
+model = models.Sequential()
+
+model.add(complexnn.conv.ComplexConv2D(32, (3, 3), activation='modrelu', padding='same', input_shape=input_shape))
+model.add(complexnn.bn.ComplexBatchNormalization())
+model.add(layers.MaxPooling2D((2, 2), padding='same'))
+
+model.compile(optimizer=optimizers.Adam(), loss='mse')
+
+```
+
 
 Citation
 --------
