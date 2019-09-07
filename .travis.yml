@@ -29,4 +29,4 @@ install:
   - pip3 install tensorflow==1.13.1 # Non-GPU for Travis
   - pip3 install keras==2.2.4
   - pip3 install --upgrade pytest
-script: python -m pytest /tests/unit_tests.py
+script: python -m pytest tests/unit_tests.py
