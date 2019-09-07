@@ -77,7 +77,7 @@ Cite this software version as:
     url       = {https://figshare.com/articles/_/9783773/0}, 
     DOI       = {10.6084/m9.figshare.9783773}, 
     publisher = {figshare}, 
-    author    = author={Dramsch, Jesper S{\"o}ren and Trabelski, Chiheb and Bilaniuk, Olexa and Serdyuk, Dmitriy}, 
+    author    = author={Dramsch, Jesper S{\"o}ren and Contributors}, 
     year      = {2019}
 }
 ```
