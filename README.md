@@ -12,12 +12,6 @@ Install requirements for computer vision experiments with pip:
 pip install numpy Theano keras kerosene
 ```
 
-And for music experiments:
-```
-pip install scipy sklearn intervaltree resampy
-pip install git+git://github.com/bartvm/mimir.git
-```
-
 Depending on your Python installation you might want to use anaconda or other tools.
 
 
