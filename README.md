@@ -1,6 +1,8 @@
 Deep Complex Networks
 =====================
 
+[![Build Status](https://travis-ci.org/JesperDramsch/keras-complex.svg?branch=master)](https://travis-ci.org/JesperDramsch/keras-complex)
+
 This repository contains code which reproduces experiments presented in
 the paper [Deep Complex Networks](https://arxiv.org/abs/1705.09792).
 
