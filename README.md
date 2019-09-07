@@ -9,18 +9,18 @@ Requirements
 
 - numpy
 - scipy
-- sklearn
+- scikit-learn
 - keras
-- tensorflow or tensorflow-gpu
+- tensorflow 1.X or tensorflow-gpu 1.X
 
 Install requirements for computer vision experiments with pip:
 ```
-pip install numpy scipy sklearn keras tensorflow-gpu
+pip install -f requirements.txt
 ```
 
 For the non-gpu version:
 ```
-pip install numpy scipy sklearn keras tensorflow
+pip install numpy scipy scikit-klearn keras tensorflow
 ```
 
 Depending on your Python installation you might want to use anaconda or other tools.
