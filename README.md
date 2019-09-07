@@ -1,6 +1,4 @@
-Deep Complex Networks
-=====================
-
+# Complex-Valued Neural Networks in Keras with Tensorflow
 [![Build Status](https://travis-ci.org/JesperDramsch/keras-complex.svg?branch=master)](https://travis-ci.org/JesperDramsch/keras-complex)
 
 This repository contains code which reproduces experiments presented in
