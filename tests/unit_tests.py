@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""Unit tests for deep complex networks"""
 import unittest
 
 from keras.layers import Input
