@@ -20,7 +20,7 @@ pip install -f requirements.txt
 
 For the non-gpu version:
 ```
-pip install numpy scipy scikit-klearn keras tensorflow
+pip install -f requirements-nogpu.txt
 ```
 
 Depending on your Python installation you might want to use anaconda or other tools.
