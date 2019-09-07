@@ -10,7 +10,9 @@ matrix:
       osx_image: xcode11
       language: shell
       before_install:
-        - alias python='python3'
+        - cd /usr/local/bin
+	- mv python python.old
+	- ln -s python3 python
     - name: "Python 3.7.4 on Windows"
       os: windows
       language: shell
@@ -20,7 +22,7 @@ matrix:
 install:
   - python --version
   - python -m pip install --upgrade pip
-  - pip install -r requirements-nogpu.txt
-  - pip install --upgrade pytest
+  - python -m pip install -r requirements-nogpu.txt
+  - python -m pip install --upgrade pytest
 script: python -m pytest tests/unit_tests.py
 
