@@ -7,15 +7,20 @@ the paper [Deep Complex Networks](https://arxiv.org/abs/1705.09792).
 Requirements
 ------------
 
+- numpy
+- scipy
+- sklearn
+- keras
+- tensorflow or tensorflow-gpu
+
 Install requirements for computer vision experiments with pip:
 ```
-pip install numpy Theano keras kerosene
+pip install numpy scipy sklearn keras tensorflow-gpu
 ```
 
-And for music experiments:
+For the non-gpu version:
 ```
-pip install scipy sklearn intervaltree resampy
-pip install git+git://github.com/bartvm/mimir.git
+pip install numpy scipy sklearn keras tensorflow
 ```
 
 Depending on your Python installation you might want to use anaconda or other tools.
@@ -28,72 +33,33 @@ Installation
 pip install .
 ```
 
-Experiments
------------
+Usage
+-----
+Build your neural networks with the help of keras. 
 
-### Computer vision
+```python
+import complexnn
 
-1. Get help:
+import keras
+from keras import models
+from keras import layers
+from keras import optimizers
 
-    ```
-    python scripts/run.py train --help
-    ```
+model = models.Sequential()
 
-2. Run models:
+model.add(complexnn.conv.ComplexConv2D(32, (3, 3), activation='modrelu', padding='same', input_shape=input_shape))
+model.add(complexnn.bn.ComplexBatchNormalization())
+model.add(layers.MaxPooling2D((2, 2), padding='same'))
 
-    ```
-    python scripts/run.py train -w WORKDIR --model {real,complex} --sf STARTFILTER --nb NUMBEROFBLOCKSPERSTAGE
-    ```
+model.compile(optimizer=optimizers.Adam(), loss='mse')
 
-    Other arguments may be added as well; Refer to run.py train --help for
-    
-      - Optimizer settings
-      - Dropout rate
-      - Clipping
-      - ...
-
-
-### MusicNet
-
-0. Download the dataset from [the official page](https://homes.cs.washington.edu/~thickstn/musicnet.html)
-
-    ```
-    mkdir data/
-    wget https://homes.cs.washington.edu/~thickstn/media/musicnet.npz -P data/
-    ```
-
-1. Resample the dataset with 
-
-    ```
-    resample.py data/musicnet.npz data/musicnet_11khz.npz 44100 11000
-    ```
-
-2. Run shallow models
-
-    ```
-    train.py shallow_model --in-memory --model=shallow_convnet --local-data data/musicnet_11khz.npz
-    train.py shallow_complex_model --in-memory --model=complex_shallow_convnet --complex --local-data data/musicnet_11khz.npz
-    ```
-
-3. Run deep models
-
-    ```
-    train.py deep_model --in-memory --model=deep_convnet --fourier --local-data data/musicnet_11khz.npz
-    train.py deep_complex_model --in-memory --model=complex_deep_convnet --fourier --complex --local-data data/musicnet_11khz.npz
-    ```
-
-4. Visualize with jupyter notebook
-
-    Run the notebook `notebooks/visualize_musicnet.ipynb`.
-
-    ![precision-recall](imgs/precision_recall.png "Precision-recall curve")
-    ![predicitons](imgs/pred_gt.png "Prediction example")
+```
 
 
 Citation
 --------
 
-Please cite our work as 
+Please cite the original work as: 
 
 ```
 @ARTICLE {,
