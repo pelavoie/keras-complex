@@ -11,7 +11,7 @@ Requirements
 - scipy
 - sklearn
 - keras
-- tensorflow or tensorflow-gpa
+- tensorflow or tensorflow-gpu
 
 Install requirements for computer vision experiments with pip:
 ```
