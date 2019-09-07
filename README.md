@@ -7,9 +7,20 @@ the paper [Deep Complex Networks](https://arxiv.org/abs/1705.09792).
 Requirements
 ------------
 
+- numpy
+- scipy
+- sklearn
+- keras
+- tensorflow or tensorflow-gpa
+
 Install requirements for computer vision experiments with pip:
 ```
-pip install numpy Theano keras kerosene
+pip install numpy scipy sklearn keras tensorflow-gpu
+```
+
+For the non-gpu version:
+```
+pip install numpy scipy sklearn keras tensorflow
 ```
 
 Depending on your Python installation you might want to use anaconda or other tools.
@@ -22,35 +33,11 @@ Installation
 pip install .
 ```
 
-Experiments
------------
-
-### Computer vision
-
-1. Get help:
-
-    ```
-    python scripts/run.py train --help
-    ```
-
-2. Run models:
-
-    ```
-    python scripts/run.py train -w WORKDIR --model {real,complex} --sf STARTFILTER --nb NUMBEROFBLOCKSPERSTAGE
-    ```
-
-    Other arguments may be added as well; Refer to run.py train --help for
-    
-      - Optimizer settings
-      - Dropout rate
-      - Clipping
-      - ...
-
 
 Citation
 --------
 
-Please cite our work as 
+Please cite the original work as: 
 
 ```
 @ARTICLE {,
