@@ -13,6 +13,7 @@ matrix:
         - cd /usr/local/bin
 	- mv python python.old
 	- ln -s python3 python
+        - cd -
     - name: "Python 3.7.4 on Windows"
       os: windows
       language: shell
