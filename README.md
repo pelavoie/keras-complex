@@ -53,43 +53,6 @@ Experiments
       - ...
 
 
-### MusicNet
-
-0. Download the dataset from [the official page](https://homes.cs.washington.edu/~thickstn/musicnet.html)
-
-    ```
-    mkdir data/
-    wget https://homes.cs.washington.edu/~thickstn/media/musicnet.npz -P data/
-    ```
-
-1. Resample the dataset with 
-
-    ```
-    resample.py data/musicnet.npz data/musicnet_11khz.npz 44100 11000
-    ```
-
-2. Run shallow models
-
-    ```
-    train.py shallow_model --in-memory --model=shallow_convnet --local-data data/musicnet_11khz.npz
-    train.py shallow_complex_model --in-memory --model=complex_shallow_convnet --complex --local-data data/musicnet_11khz.npz
-    ```
-
-3. Run deep models
-
-    ```
-    train.py deep_model --in-memory --model=deep_convnet --fourier --local-data data/musicnet_11khz.npz
-    train.py deep_complex_model --in-memory --model=complex_deep_convnet --fourier --complex --local-data data/musicnet_11khz.npz
-    ```
-
-4. Visualize with jupyter notebook
-
-    Run the notebook `notebooks/visualize_musicnet.ipynb`.
-
-    ![precision-recall](imgs/precision_recall.png "Precision-recall curve")
-    ![predicitons](imgs/pred_gt.png "Prediction example")
-
-
 Citation
 --------
 
