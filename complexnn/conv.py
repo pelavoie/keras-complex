@@ -29,6 +29,7 @@ def conv2d_transpose(
         filters=None,
         strides=(1, 1),
         padding="SAME",
+        output_padding=None,
         data_format="channels_last"):
     """Compatibility layer for K.conv2d_transpose
 
@@ -48,10 +49,10 @@ def conv2d_transpose(
     # Infer the dynamic output shape:
     out_height = conv_utils.deconv_length(height,
                                           stride_h, kernel_h,
-                                          padding)
+                                          padding, output_padding)
     out_width = conv_utils.deconv_length(width,
                                          stride_w, kernel_w,
-                                         padding)
+                                         padding, output_padding)
     if data_format == 'channels_first':
         output_shape = (batch_size, filters, out_height, out_width)
     else:
@@ -74,7 +75,7 @@ def ifft2(f):
 
 
 def conv_transpose_output_length(
-        input_length, filter_size, padding, stride, dilation=1):
+        input_length, filter_size, padding, stride, dilation=1, output_padding=None):
     """Rearrange arguments for compatibility with conv_output_length."""
     if dilation != 1:
         msg = f"Dilation must be 1 for transposed convolution. "
@@ -85,6 +86,7 @@ def conv_transpose_output_length(
         stride,  # stride_size
         filter_size,  # kernel_size
         padding,  # padding
+        output_padding, # output_padding
     )
 
 
