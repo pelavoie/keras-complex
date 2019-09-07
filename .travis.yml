@@ -5,8 +5,6 @@ matrix:
       python: '3.6'
     - name: "Linux Python 3.7"
       python: '3.7'
-    - name: "Linux Python 3.8 dev"
-      python: '3.8-dev'
     - name: "Linux Python pypy"
       python: 'pypy3'
     - name: "Python 3.7.4 on macOS"
