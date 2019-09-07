@@ -62,10 +62,21 @@ Citation
 Please cite the original work as: 
 
 ```
-@ARTICLE {,
+@ARTICLE {Trabelsi2017,
     author  = "Chiheb Trabelsi, Olexa Bilaniuk, Ying Zhang, Dmitriy Serdyuk, Sandeep Subramanian, João Felipe Santos, Soroush Mehri, Negar Rostamzadeh, Yoshua Bengio, Christopher J Pal",
     title   = "Deep Complex Networks",
     journal = "arXiv preprint arXiv:1705.09792",
     year    = "2017"
 }
+```
+
+Cite this software version as:
+```
+@misc{dramsch2019complex, 
+    title={Complex-Valued Neural Networks in Keras with Tensorflow}, 
+    url={https://figshare.com/articles/_/9783773/0}, 
+    DOI={10.6084/m9.figshare.9783773}, 
+    publisher={figshare}, 
+    author={Dramsch, Jesper Soeren}, 
+    year={2019}}
 ```
