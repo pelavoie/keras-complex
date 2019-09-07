@@ -73,10 +73,11 @@ Please cite the original work as:
 Cite this software version as:
 ```
 @misc{dramsch2019complex, 
-    title={Complex-Valued Neural Networks in Keras with Tensorflow}, 
-    url={https://figshare.com/articles/_/9783773/0}, 
-    DOI={10.6084/m9.figshare.9783773}, 
-    publisher={figshare}, 
-    author={Dramsch, Jesper Soeren}, 
-    year={2019}}
+    title     = {Complex-Valued Neural Networks in Keras with Tensorflow}, 
+    url       = {https://figshare.com/articles/_/9783773/0}, 
+    DOI       = {10.6084/m9.figshare.9783773}, 
+    publisher = {figshare}, 
+    author    = {Dramsch, Jesper Soeren}, 
+    year      = {2019}
+}
 ```
