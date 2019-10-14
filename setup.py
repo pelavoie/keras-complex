@@ -10,6 +10,7 @@ setup(
     version='0.1.1',
     license='MIT',
     long_description=DESCRIPTION,
+    long_description_content_type="text/markdown",
     url='https://github.com/JesperDramsch/keras-complex',
     packages=find_packages(),
     scripts=['scripts/run.py', 'scripts/training.py'],
