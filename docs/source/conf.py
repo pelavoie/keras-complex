@@ -32,6 +32,8 @@ extensions = [  'sphinxcontrib.apidoc',
                 'recommonmark'
 ]
 
+master_doc = 'index' # Needed by RTD
+
 apidoc_module_dir = '../../complexnn'
 apidoc_excluded_paths = ['tests']
 apidoc_toc_file = 'api_toc'
