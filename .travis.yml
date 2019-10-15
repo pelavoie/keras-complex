@@ -1,5 +1,5 @@
 language: python
-matrix:
+jobs:
   include:
     - name: "Linux Python 3.6"
       python: '3.6'
@@ -27,3 +27,11 @@ install:
   - python -m pip install --upgrade pytest
 script: python -m pytest tests/unit_tests.py
 
+deploy:
+  provider: pypi
+  user: "__token__"
+  password: $pypitoken
+  edge: true
+  on:
+    branch: master
+    python: '3.7'

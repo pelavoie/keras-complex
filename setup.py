@@ -8,8 +8,10 @@ with open('README.md') as f:
 setup(
     name='keras-complex',
     version='0.1.1',
+    description='Complex-values in Keras - Deep learning for humans',
     license='MIT',
     long_description=DESCRIPTION,
+    long_description_content_type="text/markdown",
     url='https://github.com/JesperDramsch/keras-complex',
     packages=find_packages(),
     scripts=['scripts/run.py', 'scripts/training.py'],
@@ -30,4 +32,5 @@ setup(
           'Topic :: Software Development :: Libraries',
           'Topic :: Software Development :: Libraries :: Python Modules'
       ],
+    python_requires='>=3.6',
 )
