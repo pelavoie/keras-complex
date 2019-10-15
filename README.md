@@ -1,5 +1,11 @@
 # Complex-Valued Neural Networks in Keras with Tensorflow
-[![Build Status](https://travis-ci.org/JesperDramsch/keras-complex.svg?branch=master)](https://travis-ci.org/JesperDramsch/keras-complex)
+[![Documentation](https://readthedocs.org/projects/keras-complex/badge/?version=latest)](https://readthedocs.org/projects/keras-complex/badge/?version=latest) [![PyPI Status](https://img.shields.io/pypi/status/keras-complex.svg)](https://img.shields.io/pypi/status/keras-complex.svg) [![PyPI Versions](https://img.shields.io/pypi/pyversions/keras-complex.svg)](https://img.shields.io/pypi/pyversions/keras-complex.svg) [![Build Status](https://travis-ci.org/JesperDramsch/keras-complex.svg?branch=master)](https://travis-ci.org/JesperDramsch/keras-complex) [![PyPI License](https://img.shields.io/pypi/l/keras-complex.svg)](LICENSCE.md)
+
+
+
+
+
+
 
 [Complex-valued convolutions](https://en.wikipedia.org/wiki/Convolution#Domain_of_definition) could provide some interesting results in signal processing-based deep learning. A simple(-ish) idea is including explicit phase information of time series in neural networks. This code enables complex-valued convolution in convolutional neural networks in [keras](https://keras.io) with the [TensorFlow](https://tensorflow.org/) backend. This makes the network modular and interoperable with standard keras layers and operations.
 
