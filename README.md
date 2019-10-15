@@ -37,7 +37,11 @@ Installation
 ------------
 
 ```
-pip install .
+pip install keras-complex
+```
+and
+```
+pip install tensorflow-gpu
 ```
 
 Usage
