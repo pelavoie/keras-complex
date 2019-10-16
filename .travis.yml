@@ -1,4 +1,6 @@
 language: python
+cache:
+  pip: true
 jobs:
   include:
     - name: "Linux Python 3.6"
@@ -26,7 +28,6 @@ install:
   - python -m pip install -r requirements-nogpu.txt
   - python -m pip install --upgrade pytest
 script: python -m pytest tests/unit_tests.py
-
 deploy:
   provider: pypi
   user: "__token__"
@@ -34,4 +35,5 @@ deploy:
   edge: true
   on:
     branch: master
+    tags: true
     python: '3.7'

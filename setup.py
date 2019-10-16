@@ -7,8 +7,8 @@ with open('README.md') as f:
 
 setup(
     name='keras-complex',
-    version='0.1.1',
-    description='Complex-values in Keras - Deep learning for humans',
+    version='0.1.2',
+    description='Complex values in Keras - Deep learning for humans',
     license='MIT',
     long_description=DESCRIPTION,
     long_description_content_type="text/markdown",
@@ -29,8 +29,13 @@ setup(
           'Programming Language :: Python :: 3 :: Only',
           'Programming Language :: Python :: 3',
           'Programming Language :: Python :: 3.6',
+          'Programming Language :: Python :: 3.7',
           'Topic :: Software Development :: Libraries',
-          'Topic :: Software Development :: Libraries :: Python Modules'
+          'Topic :: Software Development :: Libraries :: Python Modules',
+          'Topic :: Scientific/Engineering :: Artificial Intelligence',
+          'Topic :: Scientific/Engineering :: Mathematics',
+          'Topic :: Documentation :: Sphinx',
+          'Natural Language :: English'
       ],
     python_requires='>=3.6',
 )
