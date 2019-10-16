@@ -19,7 +19,7 @@ Cite this software version as:
     url       = {https://figshare.com/articles/Complex-Valued_Neural_Networks_in_Keras_with_Tensorflow/9783773/1}, 
     DOI       = {10.6084/m9.figshare.9783773}, 
     publisher = {figshare}, 
-    author    = author={Dramsch, Jesper S{\"o}ren and Contributors}, 
+    author    = {Dramsch, Jesper S{\"o}ren and Contributors}, 
     year      = {2019}
 }
 ```

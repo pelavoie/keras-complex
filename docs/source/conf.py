@@ -29,7 +29,8 @@ author = 'Jesper Dramsch, Chiheb Trabelsi, Olexa Bilaniuk, Bruce Sharpe, Ying Zh
 # ones.
 extensions = [  'sphinxcontrib.apidoc',
                 'sphinx.ext.autodoc',
-                'recommonmark'
+                'recommonmark',
+                'sphinxcontrib.bibtex'
 ]
 
 master_doc = 'index' # Needed by RTD

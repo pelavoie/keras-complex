@@ -18,7 +18,7 @@ Contents
    Installation <install>
    API <api/api_toc>
    Contributing <contrib>
-   license
+   math
    cite
 
 Indices and tables
