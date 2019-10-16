@@ -38,6 +38,24 @@ def sanitizedInitSer(init):
 
 def complex_standardization(input_centred, Vrr, Vii, Vri,
                             layernorm=False, axis=-1):
+    """Complex Standardization of input
+    
+    Arguments:
+        input_centred -- Input Tensor
+        Vrr -- Real component of covariance matrix V
+        Vii -- Imaginary component of covariance matrix V
+        Vri -- Non-diagonal component of covariance matrix V
+    
+    Keyword Arguments:
+        layernorm {bool} -- Normalization (default: {False})
+        axis {int} -- Axis for Standardization (default: {-1})
+    
+    Raises:
+        ValueError: Mismatched dimensoins
+    
+    Returns:
+        Complex standardized input
+    """
 
     ndim = K.ndim(input_centred)
     input_dim = K.shape(input_centred)[axis] // 2
