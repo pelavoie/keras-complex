@@ -6,7 +6,7 @@
 #
 # What this module includes by default:
 from . import bn, conv, dense, init, norm, pool
-# from . import fft
+from . import fft
 
 from .bn import ComplexBatchNormalization as ComplexBN
 from .conv import (
