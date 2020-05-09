@@ -10,10 +10,6 @@ import numpy                                as np
 import os, pdb, sys
 import time
 
-__version__ = "0.0.0"
-
-
-
 #
 # Message Formatter
 #
@@ -196,8 +192,7 @@ def getArgParser(prog):
 	argp = Ap.ArgumentParser(prog        = prog,
 	                         usage       = None,
 	                         description = None,
-	                         epilog      = None,
-	                         version     = __version__)
+	                         epilog      = None)
 	subp = argp.add_subparsers()
 	argp.set_defaults(argp=argp)
 	argp.set_defaults(subp=subp)
