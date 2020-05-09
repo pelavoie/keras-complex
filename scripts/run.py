@@ -202,7 +202,7 @@ def getArgParser(prog):
 	
 	
 	# Add subcommands
-	for v in globals().itervalues():
+	for v in globals().values():
 		if(isinstance(v, type)       and
 		   issubclass(v, Subcommand) and
 		   v != Subcommand):
