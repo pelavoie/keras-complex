@@ -150,7 +150,7 @@ def getResnetModel(d):
 	activation    = d.act
 	advanced_act  = d.aact
 	drop_prob     = d.dropout
-	inputShape    = (3, 32, 32) if K.image_dim_ordering() == "th" else (32, 32, 3)
+	inputShape    = (3, 32, 32) if K.image_data_format() == "channels_first" else (32, 32, 3)
 	channelAxis   = 1 if K.image_data_format() == 'channels_first' else -1
 	filsize       = (3, 3)
 	convArgs      = {
