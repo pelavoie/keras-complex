@@ -26,7 +26,7 @@ class MsgFormatter(L.Formatter):
 	
 	def formatTime(self, record, datefmt):
 		t           = record.created
-		timeFrac    = abs(t-long(t))
+		timeFrac    = abs(t-int(t))
 		timeStruct  = time.localtime(record.created)
 		timeString  = ""
 		timeString += time.strftime("%F %T", timeStruct)
@@ -84,7 +84,7 @@ class Train(Subcommand):
 		argp.add_argument("-l", "--loglevel",       default="info",             type=str,
 		    choices=cls.LOGLEVELS.keys(),
 		    help="Logging severity level.")
-		argp.add_argument("-s", "--seed",           default=0xe4223644e98b8e64, type=long,
+		argp.add_argument("-s", "--seed",           default=0xe4223644e98b8e64, type=int,
 		    help="Seed for PRNGs.")
 		argp.add_argument("--summary",     action="store_true",
 		    help="""Print a summary of the network.""")
