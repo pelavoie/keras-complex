@@ -150,7 +150,7 @@ def getResnetModel(d):
 	activation    = d.act
 	advanced_act  = d.aact
 	drop_prob     = d.dropout
-	inputShape    = (3, 32, 32) if K.image_dim_ordering() == "th" else (32, 32, 3)
+	inputShape    = (3, 32, 32) if K.image_data_format() == "channels_first" else (32, 32, 3)
 	channelAxis   = 1 if K.image_data_format() == 'channels_first' else -1
 	filsize       = (3, 3)
 	convArgs      = {
@@ -196,7 +196,7 @@ def getResnetModel(d):
 	# Stage 2
 	#
 	
-	for i in xrange(n):
+	for i in range(n):
 		O = getResidualBlock(O, filsize, [sf, sf], 2, str(i), 'regular', convArgs, bnArgs, d)
 		if i == n//2 and d.spectral_pool_scheme == "stagemiddle":
 			O = applySpectralPooling(O, d)
@@ -209,7 +209,7 @@ def getResnetModel(d):
 	if d.spectral_pool_scheme == "nodownsample":
 		O = applySpectralPooling(O, d)
 	
-	for i in xrange(n-1):
+	for i in range(n-1):
 		O = getResidualBlock(O, filsize, [sf*2, sf*2], 3, str(i+1), 'regular', convArgs, bnArgs, d)
 		if i == n//2 and d.spectral_pool_scheme == "stagemiddle":
 			O = applySpectralPooling(O, d)
@@ -222,7 +222,7 @@ def getResnetModel(d):
 	if d.spectral_pool_scheme == "nodownsample":
 		O = applySpectralPooling(O, d)
 	
-	for i in xrange(n-1):
+	for i in range(n-1):
 		O = getResidualBlock(O, filsize, [sf*4, sf*4], 4, str(i+1), 'regular', convArgs, bnArgs, d)
 		if i == n//2 and d.spectral_pool_scheme == "stagemiddle":
 			O = applySpectralPooling(O, d)
