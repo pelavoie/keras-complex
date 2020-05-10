@@ -7,7 +7,7 @@ with open('README.md') as f:
 
 setup(
     name='keras-complex',
-    version='0.1.2',
+    version='0.1.3',
     description='Complex values in Keras - Deep learning for humans',
     license='MIT',
     long_description=DESCRIPTION,
