@@ -58,7 +58,7 @@ from keras import optimizers
 
 model = models.Sequential()
 
-model.add(complexnn.conv.ComplexConv2D(32, (3, 3), activation='modrelu', padding='same', input_shape=input_shape))
+model.add(complexnn.conv.ComplexConv2D(32, (3, 3), activation='relu', padding='same', input_shape=(28, 28, 2)))
 model.add(complexnn.bn.ComplexBatchNormalization())
 model.add(layers.MaxPooling2D((2, 2), padding='same'))
 
@@ -66,6 +66,7 @@ model.compile(optimizer=optimizers.Adam(), loss='mse')
 
 ```
 
+An example working implementation of an autoencoder can be found [here](https://github.com/JesperDramsch/Complex-CNN-Seismic/).
 
 Citation
 --------
