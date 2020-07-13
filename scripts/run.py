@@ -10,6 +10,10 @@ import numpy                                as np
 import os, pdb, sys
 import time
 
+__version__ = "0.0.0"
+
+
+
 #
 # Message Formatter
 #
@@ -22,7 +26,7 @@ class MsgFormatter(L.Formatter):
 	
 	def formatTime(self, record, datefmt):
 		t           = record.created
-		timeFrac    = abs(t-int(t))
+		timeFrac    = abs(t-long(t))
 		timeStruct  = time.localtime(record.created)
 		timeString  = ""
 		timeString += time.strftime("%F %T", timeStruct)
@@ -80,7 +84,7 @@ class Train(Subcommand):
 		argp.add_argument("-l", "--loglevel",       default="info",             type=str,
 		    choices=cls.LOGLEVELS.keys(),
 		    help="Logging severity level.")
-		argp.add_argument("-s", "--seed",           default=0xe4223644e98b8e64, type=int,
+		argp.add_argument("-s", "--seed",           default=0xe4223644e98b8e64, type=long,
 		    help="Seed for PRNGs.")
 		argp.add_argument("--summary",     action="store_true",
 		    help="""Print a summary of the network.""")
@@ -192,7 +196,8 @@ def getArgParser(prog):
 	argp = Ap.ArgumentParser(prog        = prog,
 	                         usage       = None,
 	                         description = None,
-	                         epilog      = None)
+	                         epilog      = None,
+	                         version     = __version__)
 	subp = argp.add_subparsers()
 	argp.set_defaults(argp=argp)
 	argp.set_defaults(subp=subp)
@@ -202,7 +207,7 @@ def getArgParser(prog):
 	
 	
 	# Add subcommands
-	for v in globals().values():
+	for v in globals().itervalues():
 		if(isinstance(v, type)       and
 		   issubclass(v, Subcommand) and
 		   v != Subcommand):
