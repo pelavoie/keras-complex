@@ -35,3 +35,5 @@
 **/*.npy
 **/slurm-*.out
 DeepComplexNetworks.egg-info/
+**/*.pkl
+**/*.json
