@@ -5,10 +5,10 @@
 # Authors: Olexa Bilaniuk
 #
 
-import keras.backend                        as KB
-import keras.engine                         as KE
-import keras.layers                         as KL
-import keras.optimizers                     as KO
+import tensorflow.keras.backend                        as KB
+#import tensorflow.keras.engine                         as KE
+import tensorflow.keras.layers                         as KL
+#import tensorflow.keras.optimizers                     as KO
 import tensorflow                           as tf
 import numpy                                as np
 
@@ -28,10 +28,10 @@ def fft(z):
 	C      = tf.Variable(np.asarray([[[1,-1]]], dtype=tf.float32))
 	Zr, Zi = tf.signal.rfft(z[:B]), tf.signal.rfft(z[B:])
 	isOdd  = tf.equal(L%2, 1)
-	Zr     = tf.cond(isOdd, tf.concat([Zr, C*Zr[:,1:  ][:,::-1]], axis=1),
-	                        tf.concat([Zr, C*Zr[:,1:-1][:,::-1]], axis=1))
-	Zi     = tf.cond(isOdd, tf.concat([Zi, C*Zi[:,1:  ][:,::-1]], axis=1),
-	                        tf.concat([Zi, C*Zi[:,1:-1][:,::-1]], axis=1))
+	Zr     = tf.cond(pred=isOdd, true_fn=tf.concat([Zr, C*Zr[:,1:  ][:,::-1]], axis=1),
+	                        false_fn=tf.concat([Zr, C*Zr[:,1:-1][:,::-1]], axis=1))
+	Zi     = tf.cond(pred=isOdd, true_fn=tf.concat([Zi, C*Zi[:,1:  ][:,::-1]], axis=1),
+	                        false_fn=tf.concat([Zi, C*Zi[:,1:-1][:,::-1]], axis=1))
 	Zi     = (C*Zi)[:,:,::-1]  # Zi * i
 	Z      = Zr+Zi
 	return tf.concat([Z[:,:,0], Z[:,:,1]], axis=0)
@@ -43,10 +43,10 @@ def ifft(z):
 	C      = tf.Variable(np.asarray([[[1,-1]]],  dtype=tf.float32))
 	Zr, Zi = tf.signal.rfft(z[:B]), tf.signal.rfft(z[B:]*-1)
 	isOdd  = tf.equal(L%2, 1)
-	Zr     = tf.cond(isOdd, tf.concat([Zr, C*Zr[:,1:  ][:,::-1]], axis=1),
-	                        tf.concat([Zr, C*Zr[:,1:-1][:,::-1]], axis=1))
-	Zi     = tf.cond(isOdd, tf.concat([Zi, C*Zi[:,1:  ][:,::-1]], axis=1),
-	                        tf.concat([Zi, C*Zi[:,1:-1][:,::-1]], axis=1))
+	Zr     = tf.cond(pred=isOdd, true_fn=tf.concat([Zr, C*Zr[:,1:  ][:,::-1]], axis=1),
+	                        false_fn=tf.concat([Zr, C*Zr[:,1:-1][:,::-1]], axis=1))
+	Zi     = tf.cond(pred=isOdd, true_fn=tf.concat([Zi, C*Zi[:,1:  ][:,::-1]], axis=1),
+	                        false_fn=tf.concat([Zi, C*Zi[:,1:-1][:,::-1]], axis=1))
 	Zi     = (C*Zi)[:,:,::-1]  # Zi * i
 	Z      = Zr+Zi
 	return tf.concat([Z[:,:,0], Z[:,:,1]*-1], axis=0)

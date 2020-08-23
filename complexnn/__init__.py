@@ -17,7 +17,7 @@ from .conv import (
     WeightNorm_Conv,
 )
 from .dense import ComplexDense
-# from .fft import (fft, ifft, fft2, ifft2, FFT, IFFT, FFT2, IFFT2)
+from .fft import (fft, ifft, fft2, ifft2, FFT, IFFT, FFT2, IFFT2)
 from .init import (
     ComplexIndependentFilters,
     IndependentFilters,

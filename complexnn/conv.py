@@ -6,15 +6,15 @@
 #
 # Authors: Chiheb Trabelsi
 
-from keras import backend as K
-from keras import activations, initializers, regularizers, constraints
-from keras.layers import (
+from tensorflow.keras import backend as K
+from tensorflow.keras import activations, initializers, regularizers, constraints
+from tensorflow.keras.layers import (
     Layer,
     InputSpec,
 )
-from keras.layers.convolutional import _Conv
-from keras.utils import conv_utils
-from keras.backend.common import normalize_data_format
+#from   import Convolutional
+from tensorflow.python.keras.utils import conv_utils
+#from tensorflow.python.keras.utils import normalize_data_format
 import numpy as np
 from .fft import fft, ifft, fft2, ifft2
 from .bn import ComplexBN as complex_normalization
@@ -222,7 +222,7 @@ class ComplexConv(Layer):
         self.strides = conv_utils.normalize_tuple(strides, rank, "strides")
         self.padding = conv_utils.normalize_padding(padding)
         self.data_format = "channels_last" \
-            if rank == 1 else normalize_data_format(data_format)
+            if rank == 1 else conv_utils.normalize_data_format(data_format)
         self.dilation_rate = conv_utils.normalize_tuple(
             dilation_rate, rank, "dilation_rate"
         )
@@ -1016,7 +1016,7 @@ class ComplexConv3D(ComplexConv):
         return config
 
 
-class WeightNorm_Conv(_Conv):
+class WeightNorm_Conv(Layer):
     """WeightNorm_Conv"""
     # Real-valued Convolutional Layer that normalizes its weights
     # before convolving the input.
